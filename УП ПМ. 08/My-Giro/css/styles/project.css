@@ -1,0 +1,528 @@
+@charset "UTF-8";
+/* Глобальные переменные проекта*/
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI";
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 10%;
+}
+
+div.left,
+div.right {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+@media (max-width: 575px) {
+  div.left,
+div.right {
+    justify-content: center;
+  }
+}
+@media (min-width: 576px) {
+  div.left {
+    justify-content: flex-start;
+  }
+
+  div.right {
+    justify-content: flex-end;
+  }
+}
+/* Навигационное меню (общие классы) */
+ul.menu-list,
+ol.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.menu-list > li > a,
+ol.menu-list > li > a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 575px) {
+  ul.menu-list > li > a,
+ol.menu-list > li > a {
+    justify-content: center;
+  }
+}
+@media (min-width: 576px) {
+  ul.menu-list > li > a,
+ol.menu-list > li > a {
+    justify-content: center;
+  }
+  ul.menu-list.hr-menu-list,
+ol.menu-list.hr-menu-list {
+    display: flex;
+    align-items: center;
+  }
+  ul.menu-list.hr-menu-list.gutters > li:not(:last-child):not(:only-child),
+ol.menu-list.hr-menu-list.gutters > li:not(:last-child):not(:only-child) {
+    margin-right: 10px;
+  }
+}
+
+/* header*/
+header > div.upper, header > div.lower {
+  background-color: white;
+  padding: 0.5em;
+}
+header > div.upper {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
+header > div.upper p.phone-number {
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  header > div.upper p.phone-number {
+    text-align: center;
+  }
+}
+header > div.upper button.order-call {
+  display: block;
+  border-radius: 10px;
+  background-color: #ffa019;
+  width: 184px;
+  height: 37px;
+  font-size: 13px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.2;
+}
+header > div.upper button.order-call:hover {
+  background-color: #975f12;
+}
+header > div.lower nav.lower-nav > ul.left, header > div.lower nav.lower-nav > ul.right {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+@media (max-width: 575px) {
+  header > div.lower nav.lower-nav > ul.left, header > div.lower nav.lower-nav > ul.right {
+    justify-content: center;
+  }
+}
+header > div.lower nav.lower-nav > ul.left > li > a, header > div.lower nav.lower-nav > ul.right > li > a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1.2;
+}
+@media (max-width: 575px) {
+  header > div.lower nav.lower-nav > ul.left > li > a, header > div.lower nav.lower-nav > ul.right > li > a {
+    justify-content: center;
+  }
+}
+header > div.lower nav.lower-nav > ul.left > li > a:hover, header > div.lower nav.lower-nav > ul.right > li > a:hover {
+  background-color: #fbfbfb;
+  border-radius: 5%;
+}
+header > div.lower nav.lower-nav > ul.left {
+  justify-content: flex-start;
+}
+@media (max-width: 575px) {
+  header > div.lower nav.lower-nav > ul.left {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+}
+header > div.lower nav.lower-nav > ul.left > li > a.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+header > div.lower nav.lower-nav > ul.right {
+  justify-content: flex-end;
+}
+header > div.lower nav.lower-nav > ul.right > li > a {
+  padding: 0.3em;
+  font-size: 14px;
+}
+header > div.header-photo {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/header-photo.jpg);
+  background-size: cover;
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+header > div.header-photo > h1 {
+  margin-top: 0;
+  font-size: 50px;
+  font-weight: 200;
+}
+header > div.header-photo > p {
+  font-size: 16px;
+  margin: 30px 20px;
+}
+header > div.header-photo > button {
+  display: block;
+  width: 140px;
+  height: 37px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+/* main */
+main h1.main-title {
+  margin: 2em 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 200;
+}
+@media (max-width: 575px) {
+  main h1.main-title {
+    text-align: center;
+  }
+}
+main .main-text {
+  font-size: 18px;
+  line-height: 1.2;
+}
+main div.advantages img.left-arrow,
+main div.advantages img.right-arrow {
+  display: block;
+}
+main div.advantages img.left-arrow {
+  margin-right: 10px;
+}
+@media (max-width: 580px) {
+  main div.advantages div.left,
+main div.advantages div.right {
+    justify-content: center;
+  }
+}
+main div.advantages div.advantage-container {
+  margin-top: 4em;
+}
+main div.advantages div.advantage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+main div.advantages div.advantage-card > div.top {
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+main div.advantages div.advantage-card > div.top > img.advantage-photo {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main div.advantages div.advantage-card > div.bottom {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-end;
+}
+main div.advantages div.advantage-card > div.bottom > p.advantage-text {
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+}
+main div.about div.mailing {
+  background-color: #ffa019;
+  padding: 0.5em;
+}
+main div.about div.mailing p.mailing-text {
+  font-weight: 18px;
+  color: white;
+  flex-grow: 0;
+}
+@media (max-width: 575px) {
+  main div.about div.mailing p.mailing-text {
+    text-align: center;
+  }
+}
+main div.about div.mailing input.mailing-name,
+main div.about div.mailing input.mailing-email,
+main div.about div.mailing button.mailing-button {
+  box-sizing: border-box;
+  display: block;
+  margin-left: 30px;
+  height: 30px;
+}
+@media (max-width: 575px) {
+  main div.about div.mailing input.mailing-name,
+main div.about div.mailing input.mailing-email,
+main div.about div.mailing button.mailing-button {
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+}
+main div.about div.mailing input.mailing-name,
+main div.about div.mailing input.mailing-email {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+  font-size: 14px;
+  color: white;
+  line-height: 1.2;
+  padding-left: 1em;
+}
+main div.about div.mailing input.mailing-name::-moz-placeholder, main div.about div.mailing input.mailing-email::-moz-placeholder {
+  color: white;
+}
+main div.about div.mailing input.mailing-name:-ms-input-placeholder, main div.about div.mailing input.mailing-email:-ms-input-placeholder {
+  color: white;
+}
+main div.about div.mailing input.mailing-name::placeholder,
+main div.about div.mailing input.mailing-email::placeholder {
+  color: white;
+}
+main div.about div.mailing button.mailing-button {
+  background-color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: bold;
+  padding: 0em 3em;
+}
+main div.features ul.features-list-minus > li::marker {
+  content: "-  ";
+}
+main div.features ul.features-list-plus > li::marker {
+  content: "+  ";
+}
+main div.catalog {
+  background-color: #fbfbfb;
+  padding-bottom: 4em;
+}
+main div.catalog ul#catalog-menu-list > li {
+  cursor: pointer;
+}
+@media (max-width: 575px) {
+  main div.catalog ul#catalog-menu-list > li {
+    margin-bottom: 1em;
+  }
+}
+main div.catalog ul#catalog-menu-list > li.menu-item-active {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  color: white;
+  background-color: #ffa019;
+  border-radius: 4em;
+}
+main div.catalog div.product-carousel div.product-card {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fefefe;
+}
+main div.catalog div.product-carousel div.product-card > p.product-label {
+  display: inline-flex;
+  padding: 0.5em 1em;
+  background-color: #ffa019;
+  color: white;
+  border-radius: 0px 4em 4em 0px;
+}
+main div.catalog div.product-carousel div.product-card > img.product-image {
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+}
+main div.catalog div.product-carousel div.product-card > p.product-description {
+  font-size: 14px;
+  margin: 2 10%;
+  line-height: 1.2;
+}
+main div.catalog div.product-carousel div.product-card > p.product-price {
+  font-size: 18px;
+  margin: 0 10%;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+main div.consultants div.consultant-card {
+  display: flex;
+  background-color: #fbfbfb;
+}
+@media (max-width: 1100px) {
+  main div.consultants div.consultant-card {
+    flex-wrap: wrap;
+  }
+}
+main div.consultants div.consultant-card > div.consultant-left, main div.consultants div.consultant-card > div.consultant-right {
+  display: flex;
+}
+@media (max-width: 1100px) {
+  main div.consultants div.consultant-card > div.consultant-left, main div.consultants div.consultant-card > div.consultant-right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+main div.consultants div.consultant-card > div.consultant-left > img.consultant-image {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 1100px) {
+  main div.consultants div.consultant-card > div.consultant-left {
+    justify-content: center;
+  }
+}
+@media (min-width: 1101px) {
+  main div.consultants div.consultant-card > div.consultant-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+main div.consultants div.consultant-card > div.consultant-right {
+  flex-direction: column;
+}
+@media (max-width: 1100px) {
+  main div.consultants div.consultant-card > div.consultant-right {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+  }
+}
+@media (min-width: 1101px) {
+  main div.consultants div.consultant-card > div.consultant-right {
+    margin-left: 1.5em;
+    flex-grow: 1;
+    flex-shrink: 2;
+    align-items: flex-start;
+  }
+}
+main div.consultants div.consultant-card > div.consultant-right > p.consultant-title {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+main div.consultants div.consultant-card > div.consultant-right > p.consultant-position {
+  margin-top: 0;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 2.5;
+}
+main div.consultants div.consultant-card > div.consultant-right > button.consultant-button {
+  border-radius: 0.75em;
+  background-color: #ffa019;
+  padding: 1em;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.2;
+}
+main div.consultants div.consultant-card > div.consultant-right > button.consultant-button:hover {
+  background-color: #975f12;
+}
+main div.brands {
+  background-color: #fbfbfb;
+  padding: 3em 0;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 950px) {
+  main div.brands {
+    flex-wrap: wrap;
+  }
+}
+@media (mix-width: 951px) {
+  main div.brands {
+    justify-content: space-around;
+  }
+}
+main div.brands > p {
+  font-size: 30px;
+  color: #9b9b9b;
+  font-weight: bold;
+  line-height: 0.6;
+}
+@media (max-width: 950px) {
+  main div.brands > p {
+    flex-basis: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+main div.useful-information {
+  padding-bottom: 6em;
+}
+main div.useful-information div.useful-information-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+main div.useful-information div.useful-information-card:nth-child(1) {
+  background-image: url(../images/useful-information1.png);
+}
+main div.useful-information div.useful-information-card:nth-child(2) {
+  background-image: url(../images/useful-information2.png);
+}
+main div.useful-information div.useful-information-card:nth-child(3) {
+  background-image: url(../images/useful-information3.png);
+}
+main div.useful-information div.useful-information-card:nth-child(4) {
+  background-image: url(../images/useful-information4.png);
+}
+main div.useful-information div.useful-information-card > p.useful-information-text {
+  padding: 25% 5%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.667;
+  text-align: center;
+}
+
+footer {
+  padding: 3em 0;
+  background-color: #fbfbfb;
+}
+footer .footer-text,
+footer p.footer-text-title {
+  font-size: 14px;
+  line-height: 1.2;
+}
+footer .footer-text {
+  color: #8191a6;
+}
+footer p.footer-text-title {
+  color: #303842;
+  font-weight: bold;
+}
+footer p.copyright {
+  margin-top: 3em;
+}
+footer ul.footer-list,
+footer ol.footer-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+footer ul.footer-list > li > a,
+footer ol.footer-list > li > a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,85 @@
+/*
+* Flexbox rows and colums
+*/
+$flexbox-column-count: 12;
+$flexbox-column-width: 100% / $flexbox-column-count;
+
+/* Для всех размеров */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Extra small - es */
+
+@media (max-width: 575px) {
+  $gutter-width: 1em;
+  .row {
+    & > * {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    &.gutters {
+      margin-right: $gutter-width;
+      margin-left: $gutter-width;
+
+      & > :not(:last-child):not(:only-child) {
+        margin-bottom: $gutter-width;
+      }
+    }
+    .row {
+      &.gutters {
+        margin: 0;
+
+        & > :not(:last-child):not(:only-child) {
+          margin-bottom: $gutter-width;
+        }
+      }
+    }
+  }
+}
+/* Все размеры, кроме extra small */
+@media (min-width: 576px) {
+  .row {
+    & > .col {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+    @for $i from 1 through $flexbox-column-count {
+      $width: $flexbox-column-width * $i;
+
+      & > .col-#{$i} {
+        flex: 0 0 $width;
+        max-width: $width;
+      }
+    }
+    @for $i from 1 through ($flexbox-column-count - 1) {
+      $width: $flexbox-column-width * $i;
+
+      & > .offset-#{$i} {
+        margin-left: $width;
+      }
+    }
+
+    /* Отступы между колонками */
+    &.gutters {
+      $gutter-width: 1em;
+
+      & > .col:not(:last-child):not(:only-child) {
+        margin-right: $gutter-width;
+      }
+      @for $i from 1 through $flexbox-column-count {
+        $width: $flexbox-column-width * $i;
+
+        & > .col-#{$i}:not(:last-child):not(:only-child) {
+          margin-right: $gutter-width;
+          flex: 0 0 calc(#{$width} - #{$gutter-width});
+          max-width: calc(#{$width} - #{$gutter-width});
+        }
+      }
+    }
+  }
+}

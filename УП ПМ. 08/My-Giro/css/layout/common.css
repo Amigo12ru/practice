@@ -1,0 +1,27 @@
+ul.menu-list,
+ol.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.menu-list > li > a,
+ol.menu-list > li > a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.menu-list a.hr-menu-list,
+ol.menu-list a.hr-menu-list {
+  display: flex;
+  align-items: center;
+}
+ul.menu-list a.hr-menu-list.gutters > li:not(:last-child):not(:only-child),
+ol.menu-list a.hr-menu-list.gutters > li:not(:last-child):not(:only-child) {
+  margin-right: 10px;
+}
+
+.d-flex {
+  display: flex;
+}

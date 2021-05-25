@@ -1,0 +1,25 @@
+ul.menu-list,
+ol.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  & > li > a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a.hr-menu-list {
+    display: flex;
+    align-items: center;
+
+    &.gutters > li:not(:last-child):not(:only-child) {
+      margin-right: 10px;
+    }
+  }
+}
+.d-flex {
+  display: flex;
+}
